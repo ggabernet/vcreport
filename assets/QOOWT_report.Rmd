@@ -1,0 +1,69 @@
+---
+title: "QOOWT - Project Report"
+subtitle: "Exome background of glioblastoma cell lines"   
+author: "Laurence Kuhlburger, Stefan Czemmel"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    theme: default
+    number_sections: true
+    css: corp-styles.css
+    highlight: pygments
+bibliography: lit.bib    
+---
+
+<img src="logo.png" style="position:absolute;top:0px;right:0px;" height="200" width="200" />
+<div class="watermark">QBiC</div>
+
+```{r docSetup, bootstrap.show.code = FALSE, dev = 'png', bootstrap.show.message=FALSE,echo=FALSE,message=FALSE}
+## knitrBoostrap and device chunk options
+require('knitr')
+opts_chunk$set(bootstrap.show.code = FALSE, dev = 'png',echo=FALSE)
+```
+
+\
+
+***Project Members***
+
+Dr. Daniel Merck,  
+Interdisziplinäre Section Neurooncologie University of Tübingen,  
+Hoppe-Seyler Straße 3,  
+72076 Tübingen,  
+Germany  
+daniel.merk@uni-tuebingen.de
+
+Prof. Ghazaleh Tabatabai,  
+Interdisziplinäre Section Neurooncologie University of Tübingen,  
+Hoppe-Seyler Straße 3,  
+72076 Tübingen, 
+Germany  
+ghazaleh.tabatabai@med.uni-tuebingen.de
+
+\
+
+***QBiC contacts:***
+
+Laurence Kuhlburger  
+laurence.kuhlburger@qbic.uni-tuebingen.de  
+Auf der Morgenstelle 10, 72076 Tuebingen  
+
+Stefan Czemmel  
+stefan.czemmel@qbic.uni-tuebingen.de  
+Auf der Morgenstelle 10, 72076 Tuebingen  
+
+***
+
+```{r}
+rm(list = ls(all = TRUE)); graphics.off()
+path <- getwd(); setwd(path)
+
+```
+
+# Introduction and aims 
+This report describes the results of the exome-sequencing of 6 tumor cell lines. This sequencing was done in order to investigate genetic alterations that cause resistance to three drugs that are targetive therapies for glioblastoma. This report details data and results for only the exome sequencing part of the study.
+
+
+***
