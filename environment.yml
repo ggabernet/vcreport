@@ -9,6 +9,6 @@ channels:
   - r
 dependencies:
   - r-base=4.1.1
-  - conda-forge::r-svglite=1.2.3
-  - conda-forge::r-knitr=1.28
-  - conda-forge::r-rmarkdown=2.1
+  - conda-forge::r-svglite=2.0.0
+  - conda-forge::r-knitr=1.35
+  - conda-forge::r-rmarkdown=1.1
