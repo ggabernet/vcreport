@@ -1,0 +1,14 @@
+# You can use this file to create a conda environment for this pipeline:
+#   conda env create -f environment.yml
+# use this to find packages: https://anaconda.org/
+name: qbic-pipelines-vcreport-1.0.0dev
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+  - r
+dependencies:
+  - r-base=4.1.1
+  - conda-forge::r-svglite=1.2.3
+  - conda-forge::r-knitr=1.28
+  - conda-forge::r-rmarkdown=2.1

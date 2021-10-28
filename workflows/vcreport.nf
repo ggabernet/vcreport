@@ -23,8 +23,6 @@ if (params.input) { ch_input = file(params.input) } else { exit 1, 'Input sample
 ========================================================================================
 */
 
-ch_multiqc_config        = file("$projectDir/assets/multiqc_config.yaml", checkIfExists: true)
-ch_multiqc_custom_config = params.multiqc_config ? Channel.fromPath(params.multiqc_config) : Channel.empty()
 
 /*
 ========================================================================================
@@ -39,7 +37,7 @@ def modules = params.modules.clone()
 // MODULE: Local to the pipeline
 //
 include { GET_SOFTWARE_VERSIONS } from '../modules/local/get_software_versions' addParams( options: [publish_files : ['tsv':'']] )
-
+include { EXECUTE_REPORT } from '../modules/local/Execute_report.nf'
 //
 // SUBWORKFLOW: Consisting of a mix of local and nf-core/modules
 //
@@ -73,20 +71,7 @@ workflow VCREPORT {
 
     ch_software_versions = Channel.empty()
 
-    //
-    // SUBWORKFLOW: Read in samplesheet, validate and stage input files
-    //
-    INPUT_CHECK (
-        ch_input
-    )
 
-    //
-    // MODULE: Run FastQC
-    //
-    FASTQC (
-        INPUT_CHECK.out.reads
-    )
-    ch_software_versions = ch_software_versions.mix(FASTQC.out.version.first().ifEmpty(null))
 
     //
     // MODULE: Pipeline reporting
