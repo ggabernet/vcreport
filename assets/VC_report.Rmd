@@ -1,0 +1,51 @@
+---
+title: " - Project Report"
+subtitle: "Exome background of glioblastoma cell lines"
+author: "Authors"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    theme: default
+    number_sections: true
+    css: corp-styles.css
+    highlight: pygments
+bibliography: lit.bib
+---
+
+<img src="logo.png" style="position:absolute;top:0px;right:0px;" height="200" width="200" />
+<div class="watermark">QBiC</div>
+
+```{r docSetup, bootstrap.show.code = FALSE, dev = 'png', bootstrap.show.message=FALSE,echo=FALSE,message=FALSE}
+## knitrBoostrap and device chunk options
+require('knitr')
+opts_chunk$set(bootstrap.show.code = FALSE, dev = 'png',echo=FALSE)
+```
+
+\
+
+***Project Members***
+
+
+
+\
+
+***QBiC contacts:***
+
+
+
+***
+
+```{r}
+rm(list = ls(all = TRUE)); graphics.off()
+path <- getwd(); setwd(path)
+
+```
+
+# Introduction and aims
+This report describes the results of XXXX
+
+
+***
